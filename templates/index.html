@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог про котів</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Блог про котів</h1>
+    </header>
+    
+    <nav>
+        <a href="{{ url_for('index') }}">Головна</a>
+        <a href="{{ url_for('add_post') }}">Додати пост</a>
+    </nav>
+
+    <div class="container">
+        <h1>Пости</h1>
+        <div id="postsContainer">
+            {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+                {% if post.image_url %}
+                    <img src="{{ post.image_url }}" alt="Зображення поста">
+                {% endif %}
+                <div class="post-content">
+                    <p>{{ post.content[:300] }} {% if post.content|length > 300 %}... <a href="{{ url_for('view_post', post_id=post.id) }}">Читати повністю</a>{% endif %}</p>
+                </div>
+                <div>
+                    <form action="{{ url_for('like_post', post_id=post.id) }}" method="post" style="display: inline;">
+                        <button type="submit" class="like-button"> {{ post.likes }} Лайків</button>
+                    </form>
+                </div>
+                <form action="{{ url_for('delete_post', post_id=post.id) }}" method="post" style="display: inline;">
+                    <button type="submit" class="delete-button">Видалити</button>
+                </form>
+                <div class="comments">
+                    <h3>Коментарі</h3>
+                    {% for comment in post.comments %}
+                    <div class="comment">
+                        {% if comment.avatar_url %}
+                            <img src="{{ comment.avatar_url }}" alt="Аватар">
+                        {% endif %}
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <form action="{{ url_for('add_comment', post_id=post.id) }}" method="post" class="comment-form" enctype="multipart/form-data">
+                    <textarea name="comment" placeholder="Написати коментар..." required></textarea>
+                    <input type="file" name="avatar" accept="image/*" required>
+                    <button type="submit">Додати коментар</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Блог про котів
+    </footer>
+</body>
+</html>
