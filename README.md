@@ -13,8 +13,13 @@
     ```bash
     git clone https://github.com/Denus-IT/Cat-Blog.git
     ```
+2. Встановіть список:
 
-2.  Встановіть залежності:
+    ```bash
+    pip freeze > requirements.txt
+    ```
+    
+3.  Встановіть залежності:
 
     ```bash
     pip install -r requirements.txt
