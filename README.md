@@ -11,7 +11,7 @@
 1.  Клонуйте репозиторій:
 
     ```bash
-    git clone [https://github.com/Denus-IT/Cat-Blog.git](https://www.google.com/search?q=https://github.com/Denus-IT/Cat-Blog.git)
+    git clone https://github.com/Denus-IT/Cat-Blog.git
     ```
 
 2.  Перейдіть до каталогу проекту:
