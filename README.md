@@ -14,17 +14,30 @@
     git clone https://github.com/Denus-IT/Cat-Blog.git
     ```
 
-2.  Перейдіть до каталогу проекту:
-
-    ```bash
-    cd Cat-Blog_repository
-    ```
-
-3.  Встановіть залежності:
+2.  Встановіть залежності:
 
     ```bash
     pip install -r requirements.txt
     ```
+
+  Якщо використовуєте Visual Studio:
+
+1. Відкрийте його та натисніть Clone git repository_Cat
+
+2. Вставьте ссилку:
+
+    ```bash 
+    git clone https://github.com/Denus-IT/Cat-Blog.git
+    ```
+3. виберіть пусту папку
+
+4. Відкрийте термінал та вставькте команду:
+
+    ```bash
+    python app.py
+    ```
+
+5. перейдіть по посиланню що появилось у терміналі.
 
 ### Запуск
 
