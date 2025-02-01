@@ -20,7 +20,7 @@
     pip install -r requirements.txt
     ```
 
-  Якщо використовуєте Visual Studio:
+### Якщо використовуєте Visual Studio:
 
 1. Відкрийте його та натисніть Clone git repository_Cat
 
