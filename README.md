@@ -18,13 +18,24 @@
     ```bash
     pip freeze > requirements.txt
     ```
-    
+
 3.  Встановіть залежності:
 
     ```bash
     pip install -r requirements.txt
     ```
+4. перейдіть в директорію:
 
+    ```bash
+    cd Cat-Blog
+    ```
+
+5. Відкрийте термінал та вставькте команду:
+
+    ```bash
+    python app.py
+    ```
+    
 ### Якщо використовуєте Visual Studio:
 
 1. Відкрийте його та натисніть Clone git repository_Cat
